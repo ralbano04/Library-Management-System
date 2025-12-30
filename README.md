@@ -73,6 +73,15 @@ $conn = mysqli_connect("localhost", "root", "", "library_db");
 6. Run in browser
 http://localhost/library-management-system
 
+## Database Setup
+This system uses an empty database by default.
+Books and students are added through the system interface.
+
+Steps:
+1. Create a database named `library_db`
+2. Import `database/library_db.sql` using phpMyAdmin
+3. Configure the database connection in `config/config.php`
+
 ## Developer
 
 Ramon Albano  
