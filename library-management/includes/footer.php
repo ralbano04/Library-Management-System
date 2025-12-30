@@ -1,0 +1,9 @@
+<footer class="footer mt-auto py-3 bg-dark text-light">
+    <div class="container text-center">
+        <small>
+            Library Management System © <?= date("Y") ?> <br>
+            All Rights Reserved
+        </small>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
