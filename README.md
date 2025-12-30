@@ -1,199 +1,135 @@
-📚 Library Management System (University Edition)
+Library Management System
 
-A web-based Library Management System designed for university libraries to manage book circulation, student borrowing, penalties, and transaction records efficiently.
-This system supports real-world library workflows, including late-return penalties, payment tracking, filtering, reporting, and data export.
+A web-based Library Management System developed for university use.
+This system manages books, students, borrowing and returning transactions, penalties, and reports using a PHP–MySQL stack.
 
-🚀 Features
-📖 Book Management
+This project was built as an academic system following real library workflows.
 
-Add, update, delete, and search books
-
-Track total and available copies
-
-Categorization and ISBN support
-
-🎓 Student Management
-
-Manage student records (name, student number, course, year level)
-
+Features:
+Book Management
+Add, edit, delete, and search books
+Track total copies and available copies
+ISBN and category support
+Student Management
+Manage student records
+Supports multiple year levels and courses
 Search and filter students
-
-University-ready structure (supports multiple year levels)
-
-🔄 Borrow & Return Transactions
-
-Borrow and return books with due dates
-
+Borrow and Return Transactions
+Borrow books with due dates
+Return books with automatic status updates
+Prevent borrowing if no copies are available
+Penalty and Payment System
 Automatic late-return penalty calculation
-
-Prevent borrowing when copies are unavailable
-
-💰 Penalty & Payment System
-
-Daily penalty calculation for overdue books
-
-Partial payments supported
-
-Remaining balance tracking
-
-Transaction-level penalty records
-
-📊 Transaction History & Reports
-
-View full transaction history
-
-Filter by:
-
-Month
-
-Year range
-
+Supports partial payments
+Remaining balance tracking per transaction
+Transaction History and Reports
+View complete transaction history
+Filter by month and year range
 Pagination support
-
 Export reports to PDF and Excel
-
-🧾 Receipts
-
-Auto-generated borrow and return receipts
-
+Receipts
+Borrow and return receipts
 Printable format
-
 Session-based receipt handling
 
-🔐 Security & Validation
+Technology Stack:
+Frontend
+HTML
+CSS
+Bootstrap
 
-Input validation and sanitization
+Backend:
+PHP (Procedural)
 
-Safe SQL query handling
+Database:
+MySQL
 
-Error handling and debugging support
+Server:
+Apache (XAMPP)
 
-🛠️ Tech Stack
-Layer	Technology
-Frontend	HTML, CSS, Bootstrap
-Backend	PHP (Procedural)
-Database	MySQL
-Server	Apache (XAMPP)
-PDF Export	DomPDF
-Excel Export	PhpSpreadsheet
-🗄️ Database Structure
+Libraries:
+DomPDF (PDF export)
+PhpSpreadsheet (Excel export)
 
+Database Tables:
 Main tables used:
-
 students
-
 books
-
 transactions
-
-payments (optional depending on implementation)
+payments (optional, depending on implementation)
 
 Key relationships:
+One student has many transactions
+One book has many transactions
+One transaction can have multiple payments
 
-One student → many transactions
-
-One book → many transactions
-
-One transaction → multiple payments
-
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
+Installation and Setup
+Clone the repository
 git clone https://github.com/your-username/library-management-system.git
 
-2️⃣ Move to XAMPP Directory
+Move the project to XAMPP htdocs
 C:\xampp\htdocs\library-management-system
 
-3️⃣ Import Database
-
+Import the database
 Open phpMyAdmin
 
-Create a database:
-
+Create a database named:
 CREATE DATABASE library_db;
 
+Import the provided library_db.sql file into library_db
+Configure database connection
 
-Import the provided .sql file into library_db
-
-4️⃣ Configure Database Connection
-
-Edit:
-
+Edit the file:
 config/config.php
 
+Update the connection:
 $conn = mysqli_connect("localhost", "root", "", "library_db");
 
-5️⃣ Run the System
+Run the system
 
-Open browser and go to:
-
+Open your browser and go to:
 http://localhost/library-management-system
 
-📂 Project Structure
-library-management-system/
-│
-├── config/
-│   └── config.php
-│
-├── includes/
-│   ├── header.php
-│   ├── navbar.php
-│   └── footer.php
-│
-├── pages/
-│   ├── books.php
-│   ├── students.php
-│   ├── borrow.php
-│   ├── return.php
-│   ├── transactions.php
-│   ├── export_pdf.php
-│   └── export_excel.php
-│
-├── assets/
-│   ├── css/
-│   └── js/
-│
-├── database/
-│   └── library_db.sql
-│
+Project Structure
+
+library-management-system
+├── config
+│ └── config.php
+├── includes
+│ ├── header.php
+│ ├── navbar.php
+│ └── footer.php
+├── pages
+│ ├── books.php
+│ ├── students.php
+│ ├── borrow.php
+│ ├── return.php
+│ ├── transactions.php
+│ ├── export_pdf.php
+│ └── export_excel.php
+├── assets
+│ ├── css
+│ └── js
+├── database
+│ └── library_db.sql
 └── README.md
 
-📌 System Highlights
-
-Designed for academic / university use
-
+System Highlights
+Designed for academic and university use
 Realistic penalty and payment logic
-
-Clean UI using Bootstrap
-
-Expandable for:
-
-User roles (Admin / Librarian)
-
-Login authentication
-
-Barcode / QR scanning
-
+Clean and simple user interface using Bootstrap
+Easily extendable for future features
+Possible Future Improvements
+Role-based authentication (Admin / Librarian)
+Login system
+Email notifications for due dates
+Barcode or QR code scanning
 Analytics dashboard
 
-📈 Future Improvements
-
-Role-based authentication
-
-Email notifications for due dates
-
-Dashboard analytics (charts)
-
-API support
-
-Mobile-friendly optimization
-
-👨‍💻 Developer
-
+Developer:
 Ramon Albano
 Bachelor of Science in Computer Science
-University Project – Library Management System
 
-📄 License
-
-This project is for educational and academic purposes.
+License:
+This project is intended for educational and academic purposes.
 You are free to modify and extend it for learning and research.
